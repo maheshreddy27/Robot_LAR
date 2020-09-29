@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20200929 11:49:27.507" generator="Robot 3.0.4 (Python 2.7.14 on win32)">
+<suite source="D:\LearnRobotAutomation\LRA\Test\OrangeRegressionSuite.robot" id="s1" name="OrangeRegressionSuite">
+<test id="s1-t1" name="Test_01:Login as admin the title">
+<kw type="setup" name="Begin Web Test" library="BaseSetup">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${DOWNLOAD_DIRECTORY}</arg>
+</arguments>
+<assign>
+<var>${path}</var>
+</assign>
+<msg timestamp="20200929 11:49:29.050" level="INFO">${path} = D:\LearnRobotAutomation\LRA\Test\DownloadedFiles</msg>
+<status status="PASS" endtime="20200929 11:49:29.050" starttime="20200929 11:49:29.050"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+</arguments>
+<assign>
+<var>${CHROME_OPTIONS}</var>
+</assign>
+<msg timestamp="20200929 11:49:29.050" level="INFO">${CHROME_OPTIONS} = &lt;selenium.webdriver.chrome.options.Options object at 0x0419D2F0&gt;</msg>
+<status status="PASS" endtime="20200929 11:49:29.050" starttime="20200929 11:49:29.050"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>download.default_directory=${path}</arg>
+<arg>download.prompt_for_download=${False}</arg>
+<arg>safebrowsing.enabled=${True}</arg>
+</arguments>
+<assign>
+<var>${prefs}</var>
+</assign>
+<msg timestamp="20200929 11:49:29.051" level="INFO">${prefs} = {u'download.default_directory': u'D:\\LearnRobotAutomation\\LRA\\Test\\DownloadedFiles', u'download.prompt_for_download': False, u'safebrowsing.enabled': True}</msg>
+<status status="PASS" endtime="20200929 11:49:29.051" starttime="20200929 11:49:29.051"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${CHROME_OPTIONS}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+</arguments>
+<status status="PASS" endtime="20200929 11:49:29.052" starttime="20200929 11:49:29.052"></status>
+</kw>
+<kw name="Create Webdriver" library="ExtendedSelenium2Library">
+<doc>Creates an instance of a WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${CHROME_OPTIONS}</arg>
+</arguments>
+<msg timestamp="20200929 11:49:29.052" level="INFO">Creating an instance of the Chrome WebDriver</msg>
+<status status="PASS" endtime="20200929 11:49:34.577" starttime="20200929 11:49:29.052"></status>
+</kw>
+<kw name="Maximize Browser Window" library="ExtendedSelenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20200929 11:49:38.702" starttime="20200929 11:49:34.578"></status>
+</kw>
+<kw name="Go To" library="ExtendedSelenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL.${ENV}}</arg>
+</arguments>
+<msg timestamp="20200929 11:49:38.703" level="INFO">Opening url 'https://loanauth-qa.loanhd.com/Login.aspx'</msg>
+<status status="PASS" endtime="20200929 11:49:43.495" starttime="20200929 11:49:38.703"></status>
+</kw>
+<status status="PASS" endtime="20200929 11:49:43.495" starttime="20200929 11:49:29.049"></status>
+</kw>
+<kw name="Naviagte to OrangeHRM" library="OrangeLoginPage">
+<doc>Enter the OrangeHRM URL</doc>
+<kw name="Go To" library="ExtendedSelenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${Env_Url.${TestURL}}</arg>
+</arguments>
+<msg timestamp="20200929 11:49:43.502" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
+<status status="PASS" endtime="20200929 11:49:51.938" starttime="20200929 11:49:43.501"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="ExtendedSelenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${btn_OrangePage_Password}</arg>
+</arguments>
+<status status="PASS" endtime="20200929 11:49:51.963" starttime="20200929 11:49:51.938"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200929 11:49:56.964" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20200929 11:49:56.965" starttime="20200929 11:49:51.964"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>User naviagte to ${TestURL}[environment]</arg>
+</arguments>
+<msg timestamp="20200929 11:49:56.967" level="INFO">User naviagte to OrangeHR[environment]</msg>
+<status status="PASS" endtime="20200929 11:49:56.967" starttime="20200929 11:49:56.966"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${OADMIN_USERNAME}</arg>
+</arguments>
+<msg timestamp="20200929 11:49:56.969" level="INFO">Admin</msg>
+<status status="PASS" endtime="20200929 11:49:56.969" starttime="20200929 11:49:56.968"></status>
+</kw>
+<status status="PASS" endtime="20200929 11:49:56.970" starttime="20200929 11:49:43.500"></status>
+</kw>
+<kw name="Login as Admin" library="OrangeLoginPage">
+<doc>Login as admin into OrangeHRM portal</doc>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${Id_OrangePage_Username}</arg>
+<arg>${OADMIN_USERNAME}</arg>
+</arguments>
+<msg timestamp="20200929 11:49:56.978" level="INFO">Typing text 'Admin' into text field 'id=txtUsername'</msg>
+<status status="PASS" endtime="20200929 11:49:57.110" starttime="20200929 11:49:56.976"></status>
+</kw>
+<kw name="Input Password" library="ExtendedSelenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>${Id_OrangePage_Password}</arg>
+<arg>admin123</arg>
+</arguments>
+<msg timestamp="20200929 11:49:57.111" level="INFO">Typing password into text field 'id=txtPassword'</msg>
+<status status="PASS" endtime="20200929 11:49:57.207" starttime="20200929 11:49:57.111"></status>
+</kw>
+<kw name="Click Button" library="ExtendedSelenium2Library">
+<doc>Clicks a button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_OrangePage_Password}</arg>
+</arguments>
+<msg timestamp="20200929 11:49:57.208" level="INFO">Clicking button 'id=btnLogin'.</msg>
+<status status="PASS" endtime="20200929 11:50:10.288" starttime="20200929 11:49:57.207"></status>
+</kw>
+<status status="PASS" endtime="20200929 11:50:10.288" starttime="20200929 11:49:56.973"></status>
+</kw>
+<kw name="Verify Quick Launch in the Dashboard page" library="DashBoardPage">
+<doc>Verify whether user able to view Quick Launch in the Dashboard page</doc>
+<kw name="Wait Until Element Contains" library="ExtendedSelenium2Library">
+<doc>Waits until given element contains `text`.</doc>
+<arguments>
+<arg>${txt_Dashboard_QuickLaunch}</arg>
+<arg>Quick Launch</arg>
+</arguments>
+<status status="PASS" endtime="20200929 11:50:10.318" starttime="20200929 11:50:10.289"></status>
+</kw>
+<kw name="Get Text" library="ExtendedSelenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${txt_Dashboard_QuickLaunch}</arg>
+</arguments>
+<assign>
+<var>${QuickLaunch}</var>
+</assign>
+<msg timestamp="20200929 11:50:10.332" level="INFO">${QuickLaunch} = Quick Launch</msg>
+<status status="PASS" endtime="20200929 11:50:10.332" starttime="20200929 11:50:10.319"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${QuickLaunch}</arg>
+<arg>Quick Launch</arg>
+</arguments>
+<status status="PASS" endtime="20200929 11:50:10.333" starttime="20200929 11:50:10.332"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>able to view text as ${QuickLaunch}</arg>
+</arguments>
+<msg timestamp="20200929 11:50:10.333" level="INFO">able to view text as Quick Launch</msg>
+<status status="PASS" endtime="20200929 11:50:10.334" starttime="20200929 11:50:10.333"></status>
+</kw>
+<status status="PASS" endtime="20200929 11:50:10.334" starttime="20200929 11:50:10.289"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="BaseSetup">
+<kw name="Close Browser" library="ExtendedSelenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200929 11:50:12.509" starttime="20200929 11:50:10.335"></status>
+</kw>
+<status status="PASS" endtime="20200929 11:50:12.509" starttime="20200929 11:50:10.334"></status>
+</kw>
+<doc>login as admin and verify the title</doc>
+<status status="PASS" endtime="20200929 11:50:12.510" critical="yes" starttime="20200929 11:49:29.048"></status>
+</test>
+<test id="s1-t2" name="Test_02:Login as admin the title">
+<kw type="setup" name="Begin Web Test" library="BaseSetup">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${DOWNLOAD_DIRECTORY}</arg>
+</arguments>
+<assign>
+<var>${path}</var>
+</assign>
+<msg timestamp="20200929 11:50:12.518" level="INFO">${path} = D:\LearnRobotAutomation\LRA\Test\DownloadedFiles</msg>
+<status status="PASS" endtime="20200929 11:50:12.518" starttime="20200929 11:50:12.517"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+</arguments>
+<assign>
+<var>${CHROME_OPTIONS}</var>
+</assign>
+<msg timestamp="20200929 11:50:12.521" level="INFO">${CHROME_OPTIONS} = &lt;selenium.webdriver.chrome.options.Options object at 0x041D2B30&gt;</msg>
+<status status="PASS" endtime="20200929 11:50:12.521" starttime="20200929 11:50:12.520"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>download.default_directory=${path}</arg>
+<arg>download.prompt_for_download=${False}</arg>
+<arg>safebrowsing.enabled=${True}</arg>
+</arguments>
+<assign>
+<var>${prefs}</var>
+</assign>
+<msg timestamp="20200929 11:50:12.522" level="INFO">${prefs} = {u'download.default_directory': u'D:\\LearnRobotAutomation\\LRA\\Test\\DownloadedFiles', u'download.prompt_for_download': False, u'safebrowsing.enabled': True}</msg>
+<status status="PASS" endtime="20200929 11:50:12.522" starttime="20200929 11:50:12.521"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${CHROME_OPTIONS}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+</arguments>
+<status status="PASS" endtime="20200929 11:50:12.523" starttime="20200929 11:50:12.522"></status>
+</kw>
+<kw name="Create Webdriver" library="ExtendedSelenium2Library">
+<doc>Creates an instance of a WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${CHROME_OPTIONS}</arg>
+</arguments>
+<msg timestamp="20200929 11:50:12.523" level="INFO">Creating an instance of the Chrome WebDriver</msg>
+<status status="PASS" endtime="20200929 11:50:18.542" starttime="20200929 11:50:12.523"></status>
+</kw>
+<kw name="Maximize Browser Window" library="ExtendedSelenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20200929 11:50:22.659" starttime="20200929 11:50:18.543"></status>
+</kw>
+<kw name="Go To" library="ExtendedSelenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL.${ENV}}</arg>
+</arguments>
+<msg timestamp="20200929 11:50:22.660" level="INFO">Opening url 'https://loanauth-qa.loanhd.com/Login.aspx'</msg>
+<status status="PASS" endtime="20200929 11:50:27.914" starttime="20200929 11:50:22.659"></status>
+</kw>
+<status status="PASS" endtime="20200929 11:50:27.915" starttime="20200929 11:50:12.516"></status>
+</kw>
+<kw name="Naviagte to OrangeHRM" library="OrangeLoginPage">
+<doc>Enter the OrangeHRM URL</doc>
+<kw name="Go To" library="ExtendedSelenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${Env_Url.${TestURL}}</arg>
+</arguments>
+<msg timestamp="20200929 11:50:27.919" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
+<status status="PASS" endtime="20200929 11:50:34.482" starttime="20200929 11:50:27.918"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="ExtendedSelenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${btn_OrangePage_Password}</arg>
+</arguments>
+<status status="PASS" endtime="20200929 11:50:34.512" starttime="20200929 11:50:34.482"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200929 11:50:39.514" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20200929 11:50:39.515" starttime="20200929 11:50:34.512"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>User naviagte to ${TestURL}[environment]</arg>
+</arguments>
+<msg timestamp="20200929 11:50:39.517" level="INFO">User naviagte to OrangeHR[environment]</msg>
+<status status="PASS" endtime="20200929 11:50:39.517" starttime="20200929 11:50:39.516"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${OADMIN_USERNAME}</arg>
+</arguments>
+<msg timestamp="20200929 11:50:39.519" level="INFO">Admin</msg>
+<status status="PASS" endtime="20200929 11:50:39.519" starttime="20200929 11:50:39.518"></status>
+</kw>
+<status status="PASS" endtime="20200929 11:50:39.520" starttime="20200929 11:50:27.917"></status>
+</kw>
+<kw name="Login as Admin" library="OrangeLoginPage">
+<doc>Login as admin into OrangeHRM portal</doc>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${Id_OrangePage_Username}</arg>
+<arg>${OADMIN_USERNAME}</arg>
+</arguments>
+<msg timestamp="20200929 11:50:39.525" level="INFO">Typing text 'Admin' into text field 'id=txtUsername'</msg>
+<status status="PASS" endtime="20200929 11:50:39.675" starttime="20200929 11:50:39.524"></status>
+</kw>
+<kw name="Input Password" library="ExtendedSelenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>${Id_OrangePage_Password}</arg>
+<arg>admin123</arg>
+</arguments>
+<msg timestamp="20200929 11:50:39.676" level="INFO">Typing password into text field 'id=txtPassword'</msg>
+<status status="PASS" endtime="20200929 11:50:39.767" starttime="20200929 11:50:39.675"></status>
+</kw>
+<kw name="Click Button" library="ExtendedSelenium2Library">
+<doc>Clicks a button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_OrangePage_Password}</arg>
+</arguments>
+<msg timestamp="20200929 11:50:39.767" level="INFO">Clicking button 'id=btnLogin'.</msg>
+<status status="PASS" endtime="20200929 11:50:46.496" starttime="20200929 11:50:39.767"></status>
+</kw>
+<status status="PASS" endtime="20200929 11:50:46.496" starttime="20200929 11:50:39.522"></status>
+</kw>
+<kw name="Verify Quick Launch in the Dashboard page" library="DashBoardPage">
+<doc>Verify whether user able to view Quick Launch in the Dashboard page</doc>
+<kw name="Wait Until Element Contains" library="ExtendedSelenium2Library">
+<doc>Waits until given element contains `text`.</doc>
+<arguments>
+<arg>${txt_Dashboard_QuickLaunch}</arg>
+<arg>Quick Launch</arg>
+</arguments>
+<status status="PASS" endtime="20200929 11:50:46.519" starttime="20200929 11:50:46.498"></status>
+</kw>
+<kw name="Get Text" library="ExtendedSelenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${txt_Dashboard_QuickLaunch}</arg>
+</arguments>
+<assign>
+<var>${QuickLaunch}</var>
+</assign>
+<msg timestamp="20200929 11:50:46.533" level="INFO">${QuickLaunch} = Quick Launch</msg>
+<status status="PASS" endtime="20200929 11:50:46.533" starttime="20200929 11:50:46.519"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${QuickLaunch}</arg>
+<arg>Quick Launch</arg>
+</arguments>
+<status status="PASS" endtime="20200929 11:50:46.534" starttime="20200929 11:50:46.533"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>able to view text as ${QuickLaunch}</arg>
+</arguments>
+<msg timestamp="20200929 11:50:46.534" level="INFO">able to view text as Quick Launch</msg>
+<status status="PASS" endtime="20200929 11:50:46.534" starttime="20200929 11:50:46.534"></status>
+</kw>
+<status status="PASS" endtime="20200929 11:50:46.534" starttime="20200929 11:50:46.497"></status>
+</kw>
+<kw name="Click on Assign Leave link" library="DashBoardPage">
+<doc>Click on assign leave under Quick Launch</doc>
+<kw name="Wait Until Element Is Visible" library="ExtendedSelenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${txt_Dashboard_AssignLeave}</arg>
+</arguments>
+<status status="PASS" endtime="20200929 11:50:46.554" starttime="20200929 11:50:46.536"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_Dashboard_AssignLeave}</arg>
+</arguments>
+<msg timestamp="20200929 11:50:46.555" level="INFO">Clicking element 'xpath=//span[contains(text(),'Assign Leave')]'.</msg>
+<status status="PASS" endtime="20200929 11:50:48.873" starttime="20200929 11:50:46.555"></status>
+</kw>
+<status status="PASS" endtime="20200929 11:50:48.873" starttime="20200929 11:50:46.535"></status>
+</kw>
+<kw name="Enter the data in the assign leave form" library="AssignLeave">
+<doc>Enter the data in the assign leave form</doc>
+<kw name="Wait Until Element Is Visible" library="ExtendedSelenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${txt_Assignleave_leaveForm}</arg>
+</arguments>
+<status status="PASS" endtime="20200929 11:50:48.919" starttime="20200929 11:50:48.877"></status>
+</kw>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${id_Assignleave_EmpName}</arg>
+<arg>Linda Anderson</arg>
+</arguments>
+<msg timestamp="20200929 11:50:48.920" level="INFO">Typing text 'Linda Anderson' into text field 'id=assignleave_txtEmployee_empName'</msg>
+<status status="PASS" endtime="20200929 11:50:49.116" starttime="20200929 11:50:48.919"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>${drp_Assignleave_leaveType}</arg>
+</arguments>
+<msg timestamp="20200929 11:50:49.117" level="INFO">Clicking element 'id=assignleave_txtLeaveType'.</msg>
+<status status="PASS" endtime="20200929 11:50:49.746" starttime="20200929 11:50:49.117"></status>
+</kw>
+<kw name="Select From List By Index" library="ExtendedSelenium2Library">
+<doc>Selects ``*indexes`` from list identified by ``locator``.</doc>
+<arguments>
+<arg>${drp_Assignleave_leaveType}</arg>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200929 11:50:49.747" level="INFO">Selecting index(es) '2' from list 'id=assignleave_txtLeaveType'.</msg>
+<status status="PASS" endtime="20200929 11:50:49.838" starttime="20200929 11:50:49.747"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>${id_AssignLeave_FromDate}</arg>
+</arguments>
+<msg timestamp="20200929 11:50:49.839" level="INFO">Clicking element 'id=assignleave_txtFromDate'.</msg>
+<status status="PASS" endtime="20200929 11:50:50.519" starttime="20200929 11:50:49.839"></status>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${From_Date_Time}</var>
+</assign>
+<msg timestamp="20200929 11:50:50.520" level="INFO">${From_Date_Time} = 2020-09-29 11:50:50.520</msg>
+<status status="PASS" endtime="20200929 11:50:50.520" starttime="20200929 11:50:50.520"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${From_Date_Time}</arg>
+<arg>result_format=%Y-%m-%d</arg>
+</arguments>
+<assign>
+<var>${From_Date}</var>
+</assign>
+<msg timestamp="20200929 11:50:50.531" level="INFO">${From_Date} = 2020-09-29</msg>
+<status status="PASS" endtime="20200929 11:50:50.531" starttime="20200929 11:50:50.521"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${From_Date}</arg>
+</arguments>
+<msg timestamp="20200929 11:50:50.531" level="INFO">2020-09-29</msg>
+<status status="PASS" endtime="20200929 11:50:50.532" starttime="20200929 11:50:50.531"></status>
+</kw>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${id_AssignLeave_FromDate}</arg>
+<arg>${From_Date}</arg>
+</arguments>
+<msg timestamp="20200929 11:50:50.533" level="INFO">Typing text '2020-09-29' into text field 'id=assignleave_txtFromDate'</msg>
+<status status="PASS" endtime="20200929 11:50:50.710" starttime="20200929 11:50:50.532"></status>
+</kw>
+<kw name="Add Time To Date" library="DateTime">
+<doc>Adds time to date and returns the resulting date.</doc>
+<arguments>
+<arg>${From_Date}</arg>
+<arg>2 days</arg>
+</arguments>
+<assign>
+<var>${To_Date_Time}</var>
+</assign>
+<msg timestamp="20200929 11:50:50.711" level="INFO">${To_Date_Time} = 2020-10-01 00:00:00.000</msg>
+<status status="PASS" endtime="20200929 11:50:50.711" starttime="20200929 11:50:50.710"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${To_Date_Time}</arg>
+<arg>result_format=%Y-%m-%d</arg>
+</arguments>
+<assign>
+<var>${To_Date}</var>
+</assign>
+<msg timestamp="20200929 11:50:50.711" level="INFO">${To_Date} = 2020-10-01</msg>
+<status status="PASS" endtime="20200929 11:50:50.711" starttime="20200929 11:50:50.711"></status>
+</kw>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${id_AssignLeave_ToDate}</arg>
+<arg>${To_Date}</arg>
+</arguments>
+<msg timestamp="20200929 11:50:50.712" level="INFO">Typing text '2020-10-01' into text field 'id=assignleave_txtToDate'</msg>
+<status status="PASS" endtime="20200929 11:50:50.884" starttime="20200929 11:50:50.712"></status>
+</kw>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${id_Assignleave_Comment}</arg>
+<arg>Applied leave on ${To_Date}</arg>
+</arguments>
+<msg timestamp="20200929 11:50:50.884" level="INFO">Typing text 'Applied leave on 2020-10-01' into text field 'id=assignleave_txtComment'</msg>
+<status status="PASS" endtime="20200929 11:50:51.042" starttime="20200929 11:50:50.884"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200929 11:50:56.043" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20200929 11:50:56.043" starttime="20200929 11:50:51.043"></status>
+</kw>
+<kw name="Scroll Element Into View" library="ExtendedSelenium2Library">
+<doc>Scrolls an element from given ``locator`` into view.</doc>
+<arguments>
+<arg>${btn_AssignLeave_Leave}</arg>
+</arguments>
+<msg timestamp="20200929 11:50:56.045" level="INFO">Scrolling element 'id=assignBtn' into view.</msg>
+<status status="PASS" endtime="20200929 11:50:56.100" starttime="20200929 11:50:56.044"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="ExtendedSelenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${id_AssignLeave_PartialDays}</arg>
+</arguments>
+<status status="PASS" endtime="20200929 11:50:56.130" starttime="20200929 11:50:56.100"></status>
+</kw>
+<kw name="Select From List By Value" library="ExtendedSelenium2Library">
+<doc>Selects ``*values`` from list identified by ``locator``.</doc>
+<arguments>
+<arg>${id_AssignLeave_PartialDays}</arg>
+<arg>all</arg>
+</arguments>
+<msg timestamp="20200929 11:50:56.131" level="INFO">Selecting value(s) 'all' from list 'id=assignleave_partialDays'.</msg>
+<status status="PASS" endtime="20200929 11:50:56.201" starttime="20200929 11:50:56.130"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="ExtendedSelenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Duration</arg>
+</arguments>
+<status status="PASS" endtime="20200929 11:50:56.214" starttime="20200929 11:50:56.202"></status>
+</kw>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${id_Assignleave_Comment}</arg>
+<arg>Applied leave on ${To_Date}</arg>
+</arguments>
+<msg timestamp="20200929 11:50:56.214" level="INFO">Typing text 'Applied leave on 2020-10-01' into text field 'id=assignleave_txtComment'</msg>
+<status status="PASS" endtime="20200929 11:50:56.343" starttime="20200929 11:50:56.214"></status>
+</kw>
+<kw name="Click Button" library="ExtendedSelenium2Library">
+<doc>Clicks a button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_AssignLeave_Leave}</arg>
+</arguments>
+<msg timestamp="20200929 11:50:56.344" level="INFO">Clicking button 'id=assignBtn'.</msg>
+<status status="PASS" endtime="20200929 11:50:56.939" starttime="20200929 11:50:56.344"></status>
+</kw>
+<kw name="Click Button" library="ExtendedSelenium2Library">
+<doc>Clicks a button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_AssignLeave_OkBtn}</arg>
+</arguments>
+<msg timestamp="20200929 11:50:56.940" level="INFO">Clicking button 'id=confirmOkButton'.</msg>
+<kw name="Capture Page Screenshot" library="ExtendedSelenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200929 11:50:57.302" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20200929 11:50:57.303" starttime="20200929 11:50:56.976"></status>
+</kw>
+<msg timestamp="20200929 11:50:57.308" level="FAIL">ElementNotVisibleException: Message: element not interactable
+  (Session info: chrome=85.0.4183.121)
+  (Driver info: chromedriver=2.44.609538 (b655c5a60b0b544917107a59d4153d4bf78e1b90),platform=Windows NT 10.0.18362 x86_64)
+</msg>
+<status status="FAIL" endtime="20200929 11:50:57.308" starttime="20200929 11:50:56.939"></status>
+</kw>
+<status status="FAIL" endtime="20200929 11:50:57.308" starttime="20200929 11:50:48.875"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="BaseSetup">
+<kw name="Close Browser" library="ExtendedSelenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200929 11:50:59.496" starttime="20200929 11:50:57.309"></status>
+</kw>
+<status status="PASS" endtime="20200929 11:50:59.497" starttime="20200929 11:50:57.309"></status>
+</kw>
+<doc>login as admin and verify the title</doc>
+<status status="FAIL" endtime="20200929 11:50:59.499" critical="yes" starttime="20200929 11:50:12.515">ElementNotVisibleException: Message: element not interactable
+  (Session info: chrome=85.0.4183.121)
+  (Driver info: chromedriver=2.44.609538 (b655c5a60b0b544917107a59d4153d4bf78e1b90),platform=Windows NT 10.0.18362 x86_64)
+</status>
+</test>
+<status status="FAIL" endtime="20200929 11:50:59.515" starttime="20200929 11:49:27.511"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="1">Critical Tests</stat>
+<stat fail="1" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="OrangeRegressionSuite" pass="1">OrangeRegressionSuite</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20200929 11:49:28.074" level="ERROR">Error in file 'D:\LearnRobotAutomation\LRA\Resources\AppUI\NewPages\AllTestPages.robot': Importing test library 'Excel' failed: ImportError: No module named Excel
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\WINDOWS\SYSTEM32\python27.zip
+  c:\python27\DLLs
+  c:\python27\lib
+  c:\python27\lib\plat-win
+  c:\python27\lib\lib-tk
+  c:\python27
+  c:\python27\lib\site-packages</msg>
+</errors>
+</robot>
