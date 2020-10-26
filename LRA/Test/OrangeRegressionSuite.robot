@@ -9,7 +9,7 @@ Test Teardown    End Web Test
 Test_01:Login as admin the title
     [Documentation]    login as admin and verify the title
     
-    #Precondtion 
+    #Precondtion
     OrangeLoginPage.Naviagte to OrangeHRM
     OrangeLoginPage.Login as Admin
     DashBoardPage.Verify Quick Launch in the Dashboard page
@@ -17,7 +17,7 @@ Test_01:Login as admin the title
 Test_02:Login as admin the title
     [Documentation]    login as admin and verify the title
     
-    #Precondtion 
+    #Precondtion
     OrangeLoginPage.Naviagte to OrangeHRM
     OrangeLoginPage.Login as Admin
     
@@ -31,3 +31,4 @@ Test_02:Login as admin the title
     
     
     
+*** Keyword ***

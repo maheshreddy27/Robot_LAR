@@ -37,6 +37,7 @@ ${urlLoanQueuePage}                         https://loanquality-qa.loanhd.com/LQ
 ${urlReportingPage}                         https://loanquality-qa.loanhd.com/LQx/Reporting/ProjectList.aspx
 @{sLoanFactToSelectLoanType}                Conventional  FHA  Jumbo  Other  Portfolio  USDA/RHS  VA
 
+
 *** Test Cases ***  
 
 # C1471_Verify the click on the Upload [+] icon
@@ -59,7 +60,7 @@ C420641_Verify Added 'Test' pop up in findings page and check if the user is abl
     # LoanQueuePage.Filter the loan by Client    ${QC_Client}
     LoanQueuePage.Click any loan number form the LOAN NUMBER column
     LoanQueuePage.Select any audit type in the loan queue page
-    FindingsPage.Verify the defect popup   
+    FindingsPage.Verify the defect popup
     
 C28673_Verify user can edit loan facts dropdown in LoanFacts tool section
     [Documentation]    @Author: Mahesh ||  || 14-09-2019
@@ -214,7 +215,7 @@ C413418_Verify The dropdown at the top would default to the company the user was
     AdminAccountPage.From the Main Page, click on My Account
     AdminAccountPage.Click on UserList and check whether "Show Active Users" is disabled
     AdminAccountPage.Verify the dropdown value default to the company the user was logged in as    DEMO
-    LandingPage.Log Out from system 
+    LandingPage.Log Out from system
     
 C257932_Verify that Hover the Client Name # displays the tool tip with list of Users assigned to them
     [Documentation]    @Author: Mahesh || Administration || 29-03-2020
